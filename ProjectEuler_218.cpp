@@ -15,10 +15,10 @@ unsigned long long GCD(unsigned long long u, unsigned long long v)
     unsigned long long shift;
     if(u==0) return v;
     if(v==0) return u;
-    shift = __builtin_ctz(u | v);
-    u >>= __builtin_ctz(u);
+    shift = __builtin_ctzll(u | v);
+    u >>= __builtin_ctzll(u);
     do {
-        v >>= __builtin_ctz(v);
+        v >>= __builtin_ctzll(v);
         if (u > v) {
             unsigned long long t = v;
             v = u;
